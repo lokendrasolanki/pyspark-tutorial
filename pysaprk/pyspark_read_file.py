@@ -12,7 +12,7 @@ df = (spark
       .option("header", True) # For header
       .option("sep",",")    # use for separator 
       .option("inferSchema", True) # for schema true for spark internal schema 
-      .load("dbfs:/FileStore/tables/person.csv") # give the path of the file 
+      .load("/data/person.csv") # give the path of the file 
       )
 
 df.display()
@@ -33,7 +33,7 @@ df = (spark
       .schema(schema) # give our external schema
       .option("header", True) 
       .option("sep",",")    
-      .load("dbfs:/FileStore/tables/person.csv")
+      .load("/data/person.csv")
       )
 
 df.display()
